@@ -683,14 +683,14 @@
          const osLabels = { android: 'Android', windows: 'Windows', mac: 'Mac OS', gnulinux: 'GNU/Linux', ios: 'Apple iOS' };
          return `${channelLabels[osMatch[1]]} ${osLabels[osMatch[2]]} Version`;
       }
-      if (path === '/') { return 'PrivacySafe Downloads'; }
-      return path.replace(/^\//, '').replace(/\/$/, '') || 'PrivacySafe Downloads';
+      if (path === '/') { return 'Secure Downloads'; }
+      return path.replace(/^\//, '').replace(/\/$/, '') || 'Secure Downloads';
    }
 
    function platformNote(path) {
       if (path === '/') {
          return [
-            ['Download for '],
+            ['Install for '],
             ['Android', '/nightly/android/'], [', '],
             ['Windows', '/nightly/windows/'], [', '],
             ['Mac OS', '/nightly/mac/'], [', and '],
