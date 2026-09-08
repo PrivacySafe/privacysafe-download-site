@@ -229,9 +229,9 @@ issue tracker. See `SECURITY.md` and [ivycyber.com/security-policy](https://ivyc
 
 © 2026 <a href="https://ivycyber.com" rel="nofollow">Ivy Cyber LLC</a>. This project is dedicated to ethical <a href="https://fsf.org/" rel="nofollow">Free/Libre and Open Source Software (FLOSS)</a>.
 
-Unless otherwise noted, this repository and the website it publishes—including HTML, CSS,
-JavaScript, text, images, and other original site materials—are Free/Libre and Open Source
-Software licensed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="nofollow">GNU Affero General Public License version 3 or later</a> (`AGPL-3.0-or-later`).
+Unless otherwise noted, this repository and the website it publishes, including HTML, CSS,
+JavaScript, text, images, and other original site materials, are free software licensed under the 
+<a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="nofollow">GNU Affero General Public License version 3 or later</a> (`AGPL-3.0-or-later`).
 
 PrivacySafe® and 3NWeb® are registered trademarks. PrivacySafe Foundation™ and Ivy Cyber™ are
 pending trademarks. Other product, service, technology, and organization names, logos, and marks
