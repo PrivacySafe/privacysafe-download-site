@@ -37,10 +37,10 @@ Prefer relative targets, as above, so the release tree remains portable.
   architecture is published.
 - Android: `x86_64`, `armeabi-v7a`, `arm64-v8a`; architecture may be omitted
   while only one `.apk` architecture is published.
-- Mac OS: `x86_64`, `arm64`; the UI labels `arm64` as `M Series`.
+- Mac OS: `x86_64`, `arm64`; the UI labels `arm64` as `newer M Series` and `x86_64` as `older Intel`.
 - GNU/Linux AppImage: `x86_64`, `aarch64`.
 - Debian packages: `amd64`, `arm64`.
 - Apple iOS `.ipa`: `arm64e` (newer iPhone/iPad) and `arm64` (older iPhone/iPad) are Quick downloads; `x86_64` is not shown in Quick downloads.
 
 The UI labels Intel-compatible 64-bit builds as `Intel/AMD 64`, 64-bit ARM builds
-as `ARM 64`, Android 32-bit ARM as `ARM 32`, and Mac OS arm64 as `M Series`.
+as `ARM 64`, Android 32-bit ARM as `ARM 32`, Mac OS arm64 as `newer M Series`, and Mac OS x86_64 as `older Intel`. Debian-package quick downloads are labeled `Debian or Ubuntu Intel/AMD 64` or `Debian or Ubuntu ARM 64`.
