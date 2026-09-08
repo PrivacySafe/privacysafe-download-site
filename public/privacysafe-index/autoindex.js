@@ -132,9 +132,10 @@
       const group = archClass(arch);
       if (os === 'ios' && group === 'arm64e') { return 'newer iPhone/iPad'; }
       if (os === 'ios' && group === 'arm64') { return 'older iPhone/iPad'; }
-      if (os === 'mac' && group === 'arm64') { return 'M Series'; }
-      if (os === 'gnulinux' && family === 'deb' && group === 'x86-64') { return 'Debian Intel/AMD 64'; }
-      if (os === 'gnulinux' && family === 'deb' && group === 'arm64') { return 'Debian ARM 64'; }
+      if (os === 'mac' && group === 'arm64') { return 'newer M Series'; }
+      if (os === 'mac' && group === 'x86-64') { return 'older Intel'; }
+      if (os === 'gnulinux' && family === 'deb' && group === 'x86-64') { return 'Debian or Ubuntu Intel/AMD 64'; }
+      if (os === 'gnulinux' && family === 'deb' && group === 'arm64') { return 'Debian or Ubuntu ARM 64'; }
       if (group === 'x86-64') { return 'Intel/AMD 64'; }
       if (group === 'arm64') { return 'ARM 64'; }
       if (group === 'arm32') { return 'ARM 32'; }
@@ -148,6 +149,7 @@
          download: alias,
          synthetic: true,
          shortcutLabel: shortcutLabel(os, arch, family),
+         shortcutOmitFor: os === 'mac' || (os === 'gnulinux' && family === 'deb'),
          sourceName: source.txt
       };
    }
@@ -411,7 +413,7 @@
          a.append(document.createTextNode(item.txt));
          const label = document.createElement('span');
          label.className = 'shortcut-label';
-         label.textContent = `\u00A0\u00A0\u00A0(for ${item.shortcutLabel})`;
+         label.textContent = `\u00A0\u00A0\u00A0(${item.shortcutOmitFor ? '' : 'for '}${item.shortcutLabel})`;
          a.appendChild(label);
       } else {
          const osIcon = item.osIcon ? createOSIcon(item.osIcon) : null;
@@ -681,14 +683,14 @@
          const osLabels = { android: 'Android', windows: 'Windows', mac: 'Mac OS', gnulinux: 'GNU/Linux', ios: 'Apple iOS' };
          return `${channelLabels[osMatch[1]]} ${osLabels[osMatch[2]]} Version`;
       }
-      if (path === '/') { return 'Secure Downloads'; }
-      return path.replace(/^\//, '').replace(/\/$/, '') || 'Secure Downloads';
+      if (path === '/') { return 'PrivacySafe Downloads'; }
+      return path.replace(/^\//, '').replace(/\/$/, '') || 'PrivacySafe Downloads';
    }
 
    function platformNote(path) {
       if (path === '/') {
          return [
-            ['Install for '],
+            ['Download for '],
             ['Android', '/nightly/android/'], [', '],
             ['Windows', '/nightly/windows/'], [', '],
             ['Mac OS', '/nightly/mac/'], [', and '],
@@ -837,4 +839,3 @@
 
    renderIntoPlaceholder(nginxList, [{ heading: '', items: parsedItems }]);
 }());
-
