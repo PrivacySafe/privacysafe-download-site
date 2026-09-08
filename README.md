@@ -154,8 +154,8 @@ work without first loading the directory page.
 | --- | --- |
 | Windows | `.exe`; `x64` and `arm64` are recognized. The architecture may be omitted from the clean alias while only one architecture is published. |
 | Android | `.apk`; `arm64-v8a`, `x86_64`, and `armeabi-v7a` are recognized. The architecture may be omitted from the clean alias while only one architecture is published. |
-| Mac OS | `.dmg`; `arm64` and `x86_64`; Apple Silicon `arm64` is labeled **M Series**. |
-| GNU/Linux | `.AppImage` aliases use `x86_64` / `aarch64`; Debian `.deb` aliases use `amd64` / `arm64`. |
+| Mac OS | `.dmg`; `arm64` and `x86_64`; Apple Silicon `arm64` is labeled **newer M Series**; `x86_64` is labeled **older Intel**. |
+| GNU/Linux | `.AppImage` aliases use `x86_64` / `aarch64`; Debian `.deb` aliases use `amd64` / `arm64` and display **Debian or Ubuntu Intel/AMD 64** or **Debian or Ubuntu ARM 64**. |
 | Apple iOS | `.ipa`; `arm64e` is labeled **newer iPhone/iPad** and listed before `arm64`, which is labeled **older iPhone/iPad**. `x86_64` builds remain visible under **All files** but are deliberately excluded from **Quick downloads**. |
 
 Architecture spellings used by release tooling are normalized where appropriate. In particular,
