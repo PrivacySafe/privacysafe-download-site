@@ -1,0 +1,34 @@
+download.privacysafe.app
+NOTICE
+
+Copyright (C) 2026 Ivy Cyber LLC
+https://ivycyber.com
+
+Unless a file or third-party component carries a different notice, this
+repository and the website it publishes, including HTML, CSS, JavaScript, text,
+images, and other original site materials, are licensed under the GNU Affero
+General Public License version 3 or later (AGPL-3.0-or-later).
+
+PrivacySafe(R) and 3NWeb(R) are registered trademarks. PrivacySafe Foundation(TM)
+and Ivy Cyber(TM) are pending trademarks. Trademark rights are not granted by
+the GNU AGPL. See TRADEMARKS.md.
+
+Third-party components, services, fonts, images, and other materials retain
+their original copyright notices, licenses, and trademark rights.
+
+See LICENSE, LICENSES/, TRADEMARKS.md, and public/weblabels.html.
+
+
+Third-party JavaScript
+----------------------
+public/privacysafe-index/plausible-metrics.js is a source copy of the Plausible
+metrics script served from https://privacysafe.click/js/script.js. Copyright
+(c) 2018-present Plausible Insights OÜ; licensed under the Expat/MIT License.
+Its license text is included in the file header and its LibreJS Web Label is
+published at https://privacysafe.app/weblabels.html.
+
+Stack Sans Headline
+-------------------
+The bundled Stack Sans Headline webfonts are Copyright 2025 The Stack Sans
+Project Authors (https://github.com/DylanYoungKoto/Stack-Sans) and are licensed
+under the SIL Open Font License 1.1. See LICENSES/Stack-Sans-OFL-1.1.txt.

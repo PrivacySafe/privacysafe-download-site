@@ -1,0 +1,6 @@
+Contact: mailto:security@privacysafe.net
+Encryption: https://keys.openpgp.org/search?q=security%40privacysafe.net
+Policy: https://ivycyber.com/security-policy/
+Canonical: https://download.privacysafe.app/.well-known/security.txt
+Expires: 2027-09-07T23:59:59Z
+Preferred-Languages: en

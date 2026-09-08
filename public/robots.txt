@@ -1,0 +1,76 @@
+# robots.txt for https://download.privacysafe.app/
+#
+# Search, retrieval, archival, and AI crawlers are welcome to index and summarize
+# this public download site. The site is licensed AGPL-3.0-or-later.
+#
+# This file is advisory, not access control. Sensitive or non-public material must
+# be protected by server configuration and authentication, not robots.txt.
+
+User-agent: *
+Allow: /
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+User-agent: Applebot
+Allow: /
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Other AI / retrieval crawlers
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+User-agent: FacebookBot
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: Diffbot
+Allow: /
+User-agent: omgili
+Allow: /
+User-agent: Timpibot
+Allow: /
+User-agent: YouBot
+Allow: /
+
+# Archival
+User-agent: ia_archiver
+Allow: /
+User-agent: archive.org_bot
+Allow: /
+
+Sitemap: https://download.privacysafe.app/sitemap.xml

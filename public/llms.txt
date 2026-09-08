@@ -1,0 +1,66 @@
+# PrivacySafe Downloads
+
+Official software download host for PrivacySafe:
+https://download.privacysafe.app/
+
+PrivacySafe is Free/Libre and Open Source Software (FLOSS) for private communication and
+storage. PrivacySafe builds are published by Ivy Cyber LLC. Upstream development,
+education, standards, and public-interest research are funded by donations to
+PrivacySafe Foundation, Inc., a 501(c)(3) nonprofit public charity. The
+download.privacysafe.app site is hosted in Canada by 3NSoft, Inc. for Ivy Cyber LLC.
+PrivacySafe provides encrypted chat, peer-to-peer voice and video calls, and encrypted
+storage. No phone number is required to sign up.
+
+## Download channels
+
+- `latest`: current stable/recommended builds.
+- `test`: pre-release testing builds.
+- `nightly`: frequently updated development builds.
+
+## Platforms and architecture names
+
+- Windows `.exe`: `x64`, `arm64`. When only one architecture is published, the
+  clean JavaScript shortcut may omit architecture.
+- Android `.apk`: `x86_64`, `armeabi-v7a`, `arm64-v8a`. When only one architecture
+  is published, the clean JavaScript shortcut may omit architecture.
+- Mac OS `.dmg`: `x86_64`, `arm64`; the user-facing label for arm64 is `M Series`.
+- GNU/Linux AppImage: `x86_64`, `aarch64`.
+- Debian packages: `amd64`, `arm64`.
+
+Directory pages generate bold quick-download links from the newest matching
+versioned installer in the directory. Existing alias-named files or symlinks do
+not control the generated row: the raw alias entry is suppressed and the shortcut
+is regenerated from the newest versioned installer. The generated row uses the
+selected file's real date and file size and points directly to that versioned file
+while suggesting a clean channel-based filename with the HTML `download` attribute.
+When a directory publishes `checksums.json`, the corresponding SHA-256 value is
+displayed beneath each Quick download when it can be matched to the selected build.
+
+## Verification and source
+
+- Product: https://privacysafe.app/
+- Client and server source: https://github.com/PrivacySafe
+- 3NWeb protocols: https://3nweb.com/
+- IEEE SA Open: https://opensource.ieee.org/3nweb
+- JavaScript licensing: https://privacysafe.app/weblabels.html
+- Security policy: https://ivycyber.com/security-policy/
+- Website source: https://github.com/PrivacySafe/privacysafe-download-site
+- Hosting provider: https://3nsoft.com/
+
+## Organizations
+
+PrivacySafe Foundation, Inc. is a 501(c)(3) nonprofit public charity supporting
+upstream development, privacy and cybersecurity education, standards,
+documentation, reusable FLOSS libraries, and public-interest security research:
+https://privacysafe.foundation/
+
+PrivacySafe products, builds, services, support, and commercial offerings are
+published by Ivy Cyber LLC:
+https://ivycyber.com/
+
+## Licensing and trademarks
+
+The download website, including HTML, CSS, JavaScript, text, images, and other original site materials, is licensed AGPL-3.0-or-later.
+
+PrivacySafe(R) and 3NWeb(R) are registered trademarks. PrivacySafe Foundation(TM)
+and Ivy Cyber(TM) are pending trademarks. Trademark rights are not licensed under the AGPL.

@@ -1,0 +1,830 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Ivy Cyber LLC
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+/* Stack Sans Headline — SIL Open Font License 1.1.
+ * Font files are bundled locally so directory pages do not depend on a
+ * cross-origin font request. See /LICENSES/Stack-Sans-OFL-1.1.txt. */
+@font-face {
+  font-family: "Stack Sans Headline";
+  src: url("/privacysafe-index/stack-sans-headline-latin-400-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Stack Sans Headline";
+  src: url("/privacysafe-index/stack-sans-headline-latin-500-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Stack Sans Headline";
+  src: url("/privacysafe-index/stack-sans-headline-latin-600-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Stack Sans Headline";
+  src: url("/privacysafe-index/stack-sans-headline-latin-700-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+    --bg: #1A1916;
+    --bg-soft: #20201D;
+    --card: #262624;
+    --text: #FAF9F5;
+    --muted: #C2C0B6;
+    --quiet: #A6A49B;
+    --orange: #FB521F;
+    --copper: #D9824F;
+    --line: rgba(255, 255, 255, 0.11);
+    --line-strong: rgba(255, 255, 255, 0.18);
+    --radius: 24px;
+    --shadow: 0 18px 70px rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+    font-family: "Stack Sans Headline", "Inter", "Liberation Sans", "Helvetica Neue", Helvetica, Arial, "DejaVu Sans", Roboto, "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-width: 0;
+    min-height: 100vh;
+    padding: clamp(30px, 5vw, 68px) clamp(18px, 5vw, 64px);
+    color: var(--text);
+    background:
+        radial-gradient(circle at 12% 8%, rgba(251, 82, 31, 0.16), transparent 28rem),
+        radial-gradient(circle at 86% 18%, rgba(198, 97, 63, 0.14), transparent 30rem),
+        radial-gradient(circle at 50% 65%, rgba(198, 97, 63, 0.12), transparent 35rem),
+        var(--bg);
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* PrivacySafe brand link at the top of every generated directory page. */
+.brand-home-link {
+    display: block;
+    width: fit-content;
+    max-width: 58vw;
+    margin: 0 auto 18px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.brand-home-link .brand-logo,
+.logo,
+.header-logo {
+    display: block;
+    width: min(245px, 58vw);
+    height: auto;
+    margin: 0;
+}
+
+.brand-home-link:hover .brand-logo {
+    opacity: 0.9;
+}
+
+h1 {
+    max-width: 1100px;
+    margin: 0 auto 28px;
+    color: var(--text);
+    text-align: center;
+    font-size: clamp(1.4rem, 2.8vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.012em;
+    font-weight: 700;
+    font-kerning: normal;
+    text-rendering: geometricPrecision;
+}
+
+h3 {
+    color: var(--orange);
+}
+
+hr {
+    display: none;
+}
+
+/*
+ * The original Nginx <pre> remains the ONE outer container.
+ * autoindex.js can place .nginx-list inside it without creating
+ * a second visible card.
+ */
+pre {
+    display: block;
+    width: min(100%, 1100px);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(18px, 3vw, 28px);
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background:
+        linear-gradient(150deg, rgba(251, 82, 31, 0.07), transparent 32%),
+        linear-gradient(210deg, rgba(198, 97, 63, 0.05), transparent 38%),
+        rgba(38, 38, 36, 0.76);
+    box-shadow: var(--shadow);
+    color: var(--muted);
+    font-family: inherit;
+    white-space: pre;
+}
+
+/* When autoindex.js enhances the listing, keep the same outer <pre>. */
+pre:has(.nginx-list) {
+    padding: 14px;
+    white-space: normal;
+}
+
+/* Enhanced listing uses a semantic container instead of placing a list inside <pre>. */
+.listing-shell {
+    display: block;
+    width: min(100%, 1100px);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background:
+        linear-gradient(150deg, rgba(251, 82, 31, 0.07), transparent 32%),
+        linear-gradient(210deg, rgba(198, 97, 63, 0.05), transparent 38%),
+        rgba(38, 38, 36, 0.76);
+    box-shadow: var(--shadow);
+}
+
+pre a,
+pre a:visited {
+    color: var(--text);
+    text-decoration: none;
+}
+
+pre a:hover,
+pre a:focus-visible {
+    color: var(--orange);
+}
+
+/* IMPORTANT: never hide the <pre>; .nginx-list may live inside it. */
+.nginx-list {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.nginx-list > li {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 8px 12px;
+    list-style: none;
+    line-height: 1.35;
+    color: var(--muted);
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.nginx-list > li:last-child {
+    border-bottom: 0;
+}
+
+.nginx-list > li:hover {
+    color: var(--text);
+    background: rgba(251, 82, 31, 0.08);
+}
+
+.nginx-list > li.back .svg-icon {
+    width: 25px;
+    height: 25px;
+    flex: 0 0 25px;
+    margin: 0 10px 0 0;
+    fill: var(--orange);
+}
+.nginx-list > li.back .back-label {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.nginx-list > li.back:hover .svg-icon {
+    fill: var(--text);
+}
+
+.nginx-list > li .date {
+    order: 1;
+    flex: 1 1 180px;
+    margin-right: 20px;
+    color: var(--quiet);
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+}
+
+.nginx-list > li a {
+    order: 2;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    flex: 3 1 320px;
+    margin-right: 20px;
+    overflow: hidden;
+    color: var(--text);
+    font-weight: 400;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nginx-list > li a:visited {
+    color: var(--text);
+}
+
+.nginx-list > li a:hover {
+    color: var(--orange);
+}
+
+/* Synthetic current-build shortcuts are deliberately the most prominent rows. */
+.nginx-list > li.shortcut a {
+    font-weight: 700;
+}
+
+.nginx-list > li.shortcut .shortcut-label {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.nginx-list > li .size {
+    order: 3;
+    flex: 0 0 auto;
+    min-width: 100px;
+    color: var(--quiet);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.nginx-list > li span {
+    color: var(--quiet);
+}
+
+:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+::selection {
+    color: var(--text);
+    background: rgba(251, 82, 31, 0.34);
+}
+
+@media (max-width: 760px) {
+    body {
+        padding: 28px 14px;
+    }
+
+    body > img:first-of-type,
+    .logo,
+    .brand-home-link .brand-logo,
+    .header-logo {
+        width: min(210px, 66vw);
+        margin-bottom: 14px;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: clamp(1.25rem, 6vw, 1.7rem);
+    }
+
+    pre {
+        padding: 16px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    pre:has(.nginx-list),
+    .listing-shell {
+        padding: 8px;
+    }
+
+    .nginx-list > li {
+        flex-wrap: wrap;
+        gap: 4px 10px;
+        padding: 10px;
+    }
+
+    .nginx-list > li a {
+        order: 1;
+        flex: 1 0 100%;
+        margin-right: 0;
+    }
+
+    .nginx-list > li .date {
+        order: 2;
+        flex: 1 1 auto;
+        margin-right: 0;
+        font-size: 12px;
+    }
+
+    .nginx-list > li .size {
+        order: 3;
+        min-width: 0;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+    }
+}
+
+/* Synthetic installer shortcuts generated from the newest versioned files. */
+.nginx-list > li.shortcut {
+    background: #3B2821;
+    transition: background-color 0.18s ease;
+}
+
+.nginx-list > li.shortcut.shortcut-even {
+    background: #34231D;
+}
+
+.nginx-list > li.shortcut:hover,
+.nginx-list > li.shortcut:focus-within {
+    background: #463028;
+}
+
+.nginx-list > li.shortcut.shortcut-even:hover,
+.nginx-list > li.shortcut.shortcut-even:focus-within {
+    background: #3D2922;
+}
+
+.nginx-list > li.shortcut a {
+    font-weight: 700;
+}
+
+.nginx-list > li.list-heading {
+    min-height: 0;
+    padding: 22px 12px 8px;
+    border-bottom: 0;
+}
+
+.nginx-list > li.list-heading:hover {
+    background: transparent;
+}
+
+.nginx-list > li.list-heading h2,
+.bundle-info h2 {
+    margin: 0;
+    color: var(--orange);
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.bundle-info {
+    width: min(100%, 1100px);
+    margin: 18px auto 0;
+    padding: 18px 22px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(38, 38, 36, 0.76);
+    color: var(--muted);
+}
+
+.bundle-info p {
+    margin: 8px 0 0;
+}
+
+.nginx-list > li.back {
+    min-height: 0;
+    padding: 0;
+}
+
+.nginx-list > li.back a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 44px;
+    min-height: 48px;
+    margin-right: 0;
+    padding: 8px 12px;
+}
+
+@media (forced-colors: active) {
+    .nginx-list > li,
+    pre,
+    .listing-shell,
+    .bundle-info {
+        border: 1px solid CanvasText;
+    }
+}
+
+/* WCAG 2.2 AA target sizing for the primary file links. */
+.nginx-list > li:not(.list-heading) > a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+}
+
+/* ===== Standalone LibreJS /weblabels.html ===== */
+.weblabels-page {
+    padding: 0;
+    font-size: 19px;
+    line-height: 1.62;
+}
+
+.weblabels-page a {
+    color: var(--copper);
+    text-underline-offset: 3px;
+}
+
+.weblabels-page p a {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    padding: 12px 18px;
+    border-radius: 0 0 12px 0;
+    background: var(--orange);
+    color: #150601 !important;
+    font-weight: 700;
+    text-decoration: none !important;
+}
+
+.skip-link:focus { left: 0; }
+
+.license-wrap {
+    width: min(1440px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.license-topbar {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    background: linear-gradient(to bottom, rgba(26,25,22,.92), rgba(26,25,22,.72));
+}
+
+.license-nav {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 12px 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(26,25,22,.76);
+    box-shadow: 0 8px 36px rgba(0,0,0,.25);
+}
+
+.license-brand { display: flex; align-items: center; }
+.license-brand-logo {
+    display: block;
+    width: clamp(210px, 19vw, 285px);
+    height: auto;
+}
+
+.license-nav-actions { display: flex; align-items: center; }
+.license-btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    border: 2px solid var(--orange);
+    border-radius: 999px;
+    color: var(--text) !important;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none !important;
+}
+.license-btn:hover,
+.license-btn:focus-visible { background: rgba(251,82,31,.12); }
+
+.license-section { padding: 54px 0 34px; }
+.license-section-head { margin-bottom: 22px; }
+.license-section-head h1 {
+    max-width: none;
+    margin: 0 0 14px;
+    text-align: left;
+    font-size: clamp(2.25rem, 4.9vw, 4.1rem);
+    line-height: 1.18;
+    letter-spacing: -.02em;
+}
+.license-accent { color: var(--orange); }
+.license-kicker {
+    max-width: 88ch;
+    margin: 0;
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.62;
+}
+
+.jslicense {
+    width: 100%;
+    margin: 0 0 22px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--card);
+    font-size: 15px;
+    text-align: left;
+}
+.jslicense caption {
+    padding: 0 0 10px;
+    color: var(--quiet);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    text-align: left;
+}
+.jslicense th {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line-strong);
+    background: #30302E;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+.jslicense td {
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-family: ui-monospace, SFMono-Regular, "DejaVu Sans Mono", Menlo, Consolas, monospace;
+    overflow-wrap: anywhere;
+}
+.jslicense tr:last-child td { border-bottom: 0; }
+.jslicense a { color: var(--orange) !important; text-decoration: underline; }
+
+.license-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 18px;
+}
+.license-card {
+    min-height: 230px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(38,38,36,.82);
+    box-shadow: 0 14px 45px rgba(0,0,0,.22);
+}
+.license-card h2 {
+    margin: 0 0 10px;
+    color: var(--text);
+    font-size: 1.5rem;
+    line-height: 1.18;
+}
+.license-card p { margin: 0; color: var(--muted); }
+.license-card code { color: var(--text); }
+
+.license-footer { padding: 48px 0 54px; color: var(--muted); }
+.license-footer-inner {
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 16px;
+    text-align: center;
+}
+.license-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 10px;
+}
+.license-footer-links a {
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: var(--muted) !important;
+    text-decoration: none !important;
+}
+.license-footer-links a:hover,
+.license-footer-links a:focus-visible {
+    color: var(--text) !important;
+    background: rgba(255,255,255,.055);
+}
+.license-fine {
+    width: 100%;
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.62;
+    text-align: left;
+    font-size: 17px;
+}
+.license-fine a { color: var(--copper) !important; }
+
+@media (max-width: 900px) {
+    .license-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+    .license-wrap { width: min(100% - 28px, 1440px); }
+    .license-topbar { padding: 10px 0; }
+    .license-nav { border-radius: 18px; }
+    .license-brand-logo { width: min(205px, 56vw); }
+    .license-btn { padding: 0 16px; font-size: 14px; }
+    .license-section { padding-top: 36px; }
+    .jslicense { display: block; overflow-x: auto; }
+}
+
+
+/* ===== Directory footer ===== */
+.site-footer {
+    width: min(100%, 1100px);
+    margin: 34px auto 0;
+    padding: 28px 0 8px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+}
+.site-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 10px;
+    margin-bottom: 16px;
+}
+.site-footer-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: var(--copper);
+    text-decoration: none;
+}
+.site-footer-links a:hover,
+.site-footer-links a:focus-visible {
+    color: var(--text);
+    background: rgba(255,255,255,.055);
+}
+.site-footer-fine {
+    margin: 0;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.62;
+    text-align: left;
+}
+.site-footer-fine a {
+    color: var(--copper);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+}
+
+/* Avoid color-only identification for text links. */
+.bundle-info a,
+.site-footer-fine a,
+.weblabels-page p a {
+    text-decoration-thickness: from-font;
+}
+
+@media (max-width: 760px) {
+    .site-footer { margin-top: 26px; }
+    .site-footer-links { justify-content: flex-start; }
+    .site-footer-links a { padding-left: 0; padding-right: 12px; }
+}
+
+/* Complete-document autoindex shell. */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 18px;
+    background: var(--orange);
+    color: #150601;
+    font-weight: 700;
+    text-decoration: none;
+}
+.skip-link:focus { left: 0; }
+.directory-page { display: block; }
+#directory-listing { min-height: 1px; }
+.directory-loading,
+.directory-error {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(38, 38, 36, 0.76);
+    color: var(--muted);
+}
+
+/* Quick-download SHA-256 values are loaded from checksums.json in the same directory. */
+.nginx-list > li.shortcut {
+    display: grid;
+    grid-template-columns: minmax(120px, 1fr) minmax(0, 3fr) auto;
+    grid-template-areas:
+        "date download size"
+        "date checksum checksum";
+    column-gap: 20px;
+    row-gap: 2px;
+    align-items: center;
+}
+.nginx-list > li.shortcut > .date {
+    grid-area: date;
+    margin-right: 0;
+}
+.nginx-list > li.shortcut > a {
+    grid-area: download;
+    margin-right: 0;
+}
+.nginx-list > li.shortcut > .size {
+    grid-area: size;
+}
+.nginx-list > li.shortcut > .quick-checksum {
+    grid-area: checksum;
+    min-width: 0;
+    padding: 2px 0 8px;
+    margin-top: -2px;
+    color: var(--quiet);
+    font-family: ui-monospace, SFMono-Regular, "DejaVu Sans Mono", Menlo, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+.nginx-list > li.shortcut > .quick-checksum[hidden] {
+    display: none;
+}
+
+@media (max-width: 760px) {
+    .nginx-list > li.shortcut {
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+            "download download"
+            "checksum checksum"
+            "date size";
+        gap: 4px 10px;
+    }
+    .nginx-list > li.shortcut > a {
+        min-width: 0;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+    .nginx-list > li.shortcut > .quick-checksum {
+        padding: 0 0 6px;
+        margin: 0;
+        font-size: 11px;
+    }
+}
+
+
+/* ===== OS identity and platform availability notes ===== */
+.os-icon {
+    display: inline-block; flex: 0 0 1.15em; width: 1.15em; height: 1.15em;
+    margin-right: 0.5em; background-color: currentColor; vertical-align: -0.16em;
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    -webkit-mask-position: center; mask-position: center;
+    -webkit-mask-size: contain; mask-size: contain;
+}
+.os-icon-android { -webkit-mask-image: url('/privacysafe-index/icon-os-android.svg'); mask-image: url('/privacysafe-index/icon-os-android.svg'); }
+.os-icon-windows { -webkit-mask-image: url('/privacysafe-index/icon-os-windows.svg'); mask-image: url('/privacysafe-index/icon-os-windows.svg'); }
+.os-icon-apple { -webkit-mask-image: url('/privacysafe-index/icon-os-mac.svg'); mask-image: url('/privacysafe-index/icon-os-mac.svg'); }
+.os-icon-linux { -webkit-mask-image: url('/privacysafe-index/icon-os-linux.svg'); mask-image: url('/privacysafe-index/icon-os-linux.svg'); }
+#directory-title .heading-os-icon { width: 1em; height: 1em; margin-right: 0.42em; color: var(--text); }
+.platform-note {
+    width: min(100%, 1100px); margin: -14px auto 24px; color: var(--muted);
+    font-size: 0.95rem; line-height: 1.55; text-align: center;
+}
+.platform-note a {
+    color: var(--copper); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;
+}
+.platform-note a:hover, .platform-note a:focus-visible { color: var(--orange); text-decoration-style: solid; }
+@media (max-width: 760px) { .platform-note { margin: -10px auto 18px; padding-inline: 4px; font-size: 0.9rem; } }
+@media (forced-colors: active) { .os-icon { background-color: LinkText; } #directory-title .heading-os-icon { background-color: CanvasText; } }
