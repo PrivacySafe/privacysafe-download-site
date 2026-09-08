@@ -23,7 +23,7 @@ storage. No phone number is required to sign up.
   clean JavaScript shortcut may omit architecture.
 - Android `.apk`: `x86_64`, `armeabi-v7a`, `arm64-v8a`. When only one architecture
   is published, the clean JavaScript shortcut may omit architecture.
-- Mac OS `.dmg`: `x86_64`, `arm64`; the user-facing label for arm64 is `M Series`.
+- Mac OS `.dmg`: `x86_64`, `arm64`; the user-facing labels are `newer M Series` for arm64 and `older Intel` for x86_64.
 - GNU/Linux AppImage: `x86_64`, `aarch64`.
 - Debian packages: `amd64`, `arm64`.
 
