@@ -376,7 +376,7 @@ pre a:focus-visible {
 
 .nginx-list > li.shortcut.shortcut-even:hover,
 .nginx-list > li.shortcut.shortcut-even:focus-within {
-    background: #3D2922;
+    background: #422D25;
 }
 
 .nginx-list > li.shortcut a {
@@ -775,8 +775,15 @@ pre a:focus-visible {
     font-family: ui-monospace, SFMono-Regular, "DejaVu Sans Mono", Menlo, Consolas, monospace;
     font-size: 12px;
     line-height: 1.45;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+.nginx-list > li.shortcut > .quick-checksum .quick-checksum-label {
+    white-space: nowrap;
+}
+.nginx-list > li.shortcut > .quick-checksum .quick-checksum-value {
     overflow-wrap: anywhere;
-    word-break: break-word;
+    word-break: break-all;
 }
 .nginx-list > li.shortcut > .quick-checksum[hidden] {
     display: none;
