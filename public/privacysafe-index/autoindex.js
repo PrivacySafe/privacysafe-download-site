@@ -374,7 +374,17 @@
             const row = shell.querySelector(`li.shortcut[data-source="${CSS.escape(alias.sourceName)}"]`);
             const target = row && row.querySelector('.quick-checksum');
             if (target) {
-               target.textContent = `SHA256: ${hash}`;
+               target.replaceChildren();
+
+               const label = document.createElement('span');
+               label.className = 'quick-checksum-label';
+               label.textContent = 'SHA256: ';
+
+               const value = document.createElement('span');
+               value.className = 'quick-checksum-value';
+               value.textContent = hash;
+
+               target.append(label, value);
                target.hidden = false;
             }
          });
