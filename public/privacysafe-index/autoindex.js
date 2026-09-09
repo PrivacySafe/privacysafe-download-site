@@ -134,9 +134,9 @@
       if (os === 'ios' && group === 'arm64') { return 'older iPhone/iPad'; }
       if (os === 'mac' && group === 'arm64') { return 'newer M Series'; }
       if (os === 'mac' && group === 'x86-64') { return 'older Intel'; }
-      if (os === 'gnulinux' && family === 'deb' && group === 'x86-64') { return 'Debian or Ubuntu Intel/AMD 64'; }
-      if (os === 'gnulinux' && family === 'deb' && group === 'arm64') { return 'Debian or Ubuntu ARM 64'; }
-      if (group === 'x86-64') { return 'Intel/AMD 64'; }
+      if (os === 'gnulinux' && family === 'deb' && group === 'x86-64') { return 'Ubuntu or Debian Intel/AMD'; }
+      if (os === 'gnulinux' && family === 'deb' && group === 'arm64') { return 'Ubuntu or Debian ARM 64'; }
+      if (group === 'x86-64') { return 'Intel/AMD'; }
       if (group === 'arm64') { return 'ARM 64'; }
       if (group === 'arm32') { return 'ARM 32'; }
       return arch || 'Download';
