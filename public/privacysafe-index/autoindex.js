@@ -134,9 +134,9 @@
       if (os === 'ios' && group === 'arm64') { return 'older iPhone/iPad'; }
       if (os === 'mac' && group === 'arm64') { return 'newer M Series'; }
       if (os === 'mac' && group === 'x86-64') { return 'older Intel'; }
-      if (os === 'gnulinux' && family === 'deb' && group === 'x86-64') { return 'Ubuntu or Debian Intel/AMD'; }
-      if (os === 'gnulinux' && family === 'deb' && group === 'arm64') { return 'Ubuntu or Debian ARM 64'; }
-      if (group === 'x86-64') { return 'Intel/AMD'; }
+      if (os === 'gnulinux' && family === 'deb' && group === 'x86-64') { return 'Ubuntu/Debian AMD 64'; }
+      if (os === 'gnulinux' && family === 'deb' && group === 'arm64') { return 'Ubuntu/Debian ARM 64'; }
+      if (group === 'x86-64') { return 'Intel/AMD 64'; }
       if (group === 'arm64') { return 'ARM 64'; }
       if (group === 'arm32') { return 'ARM 32'; }
       return arch || 'Download';
@@ -149,7 +149,6 @@
          download: alias,
          synthetic: true,
          shortcutLabel: shortcutLabel(os, arch, family),
-         shortcutOmitFor: os === 'mac' || (os === 'gnulinux' && family === 'deb'),
          sourceName: source.txt
       };
    }
@@ -423,7 +422,7 @@
          a.append(document.createTextNode(item.txt));
          const label = document.createElement('span');
          label.className = 'shortcut-label';
-         label.textContent = `\u00A0\u00A0\u00A0(${item.shortcutOmitFor ? '' : 'for '}${item.shortcutLabel})`;
+         label.textContent = `\u00A0\u00A0\u00A0(${item.shortcutLabel})`;
          a.appendChild(label);
       } else {
          const osIcon = item.osIcon ? createOSIcon(item.osIcon) : null;
